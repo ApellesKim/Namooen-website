@@ -4,8 +4,8 @@
     --main-color: #443;
     --border-radius: 95% 4% 97% 5% / 4% 94% 3% 95%;
     --border-radius-hover: 4% 95% 6% 95% / 95% 4% 92% 5%;
-    --border: .2rem solid var(--main-color)    
-    --border-hover: .2rem dashed var(--main-color)    
+    --border: .2rem solid var(--main-color);    
+    --border-hover: .2rem dashed var(--main-color);    
 
 }
 
@@ -38,6 +38,11 @@ html{
     font-size: 1.7rem;
 }
 
+.btn:hover{
+    border-radius: var(--border-radius-hover);
+    border: var(--border-hover);
+}
+
 .header{
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -63,4 +68,85 @@ html{
     margin: 0 1rem;
     font-size: 1.7rem;
     color: var(--main-color);
+}
+
+.header .btn{
+    margin-top: 0;
+}
+
+#menu-btn{
+    font-size: 3rem;
+    color: var(--main-color);
+    cursor: pointer;
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+
+@media(max-width: 991px){
+
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 2rem;
+    }
+
+}
+@media(max-width: 768px){
+    #menu-btn{
+        display: initial;
+    }
+    
+    #menu-btn.fa-times{
+        transform: rotate(180deg);
+    }
+
+    .header .navbar{
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background: #fff;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    .header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .navbar a{
+        display: block;
+        font-size: 2.2rem;
+        margin: 0;
+        padding: 1.5rem 2rem
+    }
+}
+
+
+@media(max-width: 450px){
+
+    html{
+        font-size: 50%;
+    }
+
 }
