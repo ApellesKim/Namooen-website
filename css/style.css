@@ -25,7 +25,12 @@ html{
     scroll-padding-top: 7rem;
     scroll-behavior: smooth;
 }
- 
+
+section{
+    padding: 2rem 9%;
+    
+}
+
 .btn{
     display: inline-block;
     padding:.9rem 1.5rem;
@@ -81,12 +86,51 @@ html{
     display: none;
 }
 
+.home{
+    min-height: 100vh;
+    padding-top: 12rem;
+    background: url(../image/home-bg.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+}
 
+.home .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
 
+.home .row .content{
+    flex: 1 1 42rem;
+}
 
+.home .row .image{
+    flex: 1 1 42rem;
+    padding-top: 10rem;
+    text-align: center;
+}
 
+.home .row .image img{
+    height: 35rem;
+    animation: float 4s linear infinite;
+}
 
+@keyframes float{
+    0%, 100%{
+        transform: translateY(0rem);
+    }
 
+    50%{
+        transform: translateY(-7rem);
+    }
+}
+
+.home .row .content h3{
+    font-size: 6.5rem;
+    color: var(--main-color);
+    text-transform: uppercase;
+}
 
 
 
@@ -104,7 +148,7 @@ html{
 /* media queries */
 
 @media(max-width: 991px){
-
+    
     html{
         font-size: 55%;
     }
@@ -112,8 +156,12 @@ html{
     .header{
         padding: 2rem;
     }
-
+    
+    section{
+        padding: 2rem;
+    }
 }
+
 @media(max-width: 768px){
     #menu-btn{
         display: initial;
